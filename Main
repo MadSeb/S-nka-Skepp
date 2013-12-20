@@ -48,7 +48,7 @@ package
 			addChild(hitOrMissText);
 			updateHitMiss();
 			
-			stage.addEventListener(KeyboardEvent.KEY_DOWN, spaceReset);
+			stage.addEventListener(KeyboardEvent.KEY_DOWN, stageReset);
 		}
 		private function newMap():void 
 		{
@@ -76,7 +76,7 @@ package
  			}
 		}
 		
-		private function spaceReset(e:KeyboardEvent):void 
+		private function stageReset(e:KeyboardEvent):void 
 		{
 			if (e.keyCode == 32) 
 			{	
@@ -91,9 +91,9 @@ package
 				hitOrMiss = 0;
 				hitOrMissText.text = "Score: 0"
 				
-				PlaceShip(3);
-				PlaceShip(3);
-				PlaceShip(3);
+				placeraSkepp(3);
+				placeraSkepp(3);
+				placeraSkepp(3);
 				
 	
 			}
@@ -112,7 +112,7 @@ package
 		{
 			hitOrMissText.text = "Score: " + hitOrMiss;
 		}
-		private function PlaceShip(shipLength:int = 3):void
+		private function placeraSkepp(shipLength:int = 3):void
 		{
 			var isHorizontal:Boolean = false;
 			var shipX:int;
@@ -144,7 +144,7 @@ package
 			{
 				if (tempShip[j].isShip)
 				{
-					PlaceShip(shipLength);
+					placeraSkepp(shipLength);
 					return;
 				}
 			}
